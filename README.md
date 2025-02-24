@@ -70,40 +70,30 @@ Ce projet repose sur l'analyse de signaux PPG (Photoplethysmogram) dans le but d
 
 
 <h2 id="dataset">📊 Données</h2>
-<p>Nous avons d'abord construit notre jeu de données à l'aide de l'API Spotify. Pour chaque morceau, nous avons récupéré les caractéristiques suivantes :</p>
+
+
+
+ 
+
+
+
+
+
+<p>Nous avons d'abord collecté et traité des signaux PPG afin d’analyser l’activité cardiaque. Pour cela, nous avons travaillé sur trois types de signaux : un PPG donné, un PPG synthétique généré à partir de modèles mathématiques et un PPG expérimental acquis en conditions réelles. Puis nous avons suivi les étapes suivantes:</p>
+
 <ul>
-  <li><strong>Caractéristiques audio</strong> : danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo.</li>
-  <li><strong>Métadonnées</strong> : nom du morceau, artiste, popularité, drapeau explicite, durée (ms), signature temporelle, étiquette de genre.</li>
-</ul>
-<p>Les appels à l'API ont été automatisés et les données ont été enregistrées au format CSV.</p>
-<p>Cependant comme expliqué dans les notebooks, un <a href="https://developer.spotify.com/blog/2024-11-27-changes-to-the-web-api">changement dans la politique de Spotify</a> apparu fin Novembre 2024 nous a empeché de terminer la construction de notre dataset. Voilà pourquoi nous utilisons dans les parties data-preprocessing, feature-engineering et train-model les données issues d'un <a href="https://www.kaggle.com/datasets/joebeachcapital/30000-spotify-songs">dataframe Kaggle</a> collectées quelques années auparavant de la même manière que nous avons pu mettre en place.
-</p>
-
-
-
-<h2 id="machine-learning-approach">📈 Approche Machine Learning</h2>
-<p>Nous avons expérimenté avec plusieurs modèles de machine learning :</p>
-<ul>
-  <li><strong>Prétraitement des données</strong> : Gestion des valeurs manquantes, standardisation des variables numériques et encodage des données catégorielles.</li>
-  <li><strong>Modèles utilisés</strong> :
-    <ul>
-      <li>RandomForest</li>
-      <li>XGBoost</li>
-      <li>CatBoost</li>
-    </ul>
-  </li>
-  <li><strong>Métriques d'évaluation</strong> : Accuracy, Précision, Rappel, Score F1.</li>
+  <li><strong>Préparation des données</strong> : centrage du signal et ajustement temporel pour garantir une analyse optimale.</li>
+  <li><strong>Analyse spectrale et filtrage</strong> :  utilisation de la transformée de Fourier et de filtres (RIF, RII) pour éliminer le bruit et améliorer la qualité du signal.</li>
+   <li><strong>Extraction des caractéristiques</strong> : détection des pics systoliques et diastoliques permettant de mesurer la fréquence cardiaque (BPM) et la vitesse d’onde de pouls (PWV).</li>
+   <li><strong>Détection des anomalies cardiaques</strong> : mise en place de tests statistiques et probabilistes pour identifier l’arythmie, la tachycardie et la bradycardie.</li>
+   <li><strong>Affichage des résultats</strong> :génération d’un tableau récapitulatif pour faciliter l’interprétation médicale des données.</li>  
 </ul>
 
-
+<p>Ce projet illustre l’application du traitement du signal au domaine biomédical et met en œuvre des méthodes avancées d’analyse pour améliorer le suivi de la santé cardiaque.</p>
 
 <h2 id="built-with">🛠️ Conçu avec</h2>
 <ul>
-  <li>Python 3</li>
-  <li>Pandas</li>
-  <li>Scikit-Learn</li>
-  <li>CatBoost</li>
-  <li>XGBoost</li>
+  <li>Matlab</li>
 </ul>
 
 
@@ -114,7 +104,7 @@ Ce projet repose sur l'analyse de signaux PPG (Photoplethysmogram) dans le but d
 
 <h3 id="prerequisites">⚙️ Prérequis</h3>
 <ul>
-  <li>Python 3.x installé</li>
+  <li>Matlab installé</li>
   <li>Bibliothèques nécessaires :
     <pre><code>pip install -r requirements.txt</code></pre>
   </li>
