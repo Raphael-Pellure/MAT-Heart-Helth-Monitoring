@@ -66,20 +66,7 @@ Ce projet repose sur l'analyse de signaux PPG (Photoplethysmogram) dans le but d
 
 
 <h2 id="repository-structure">📁 Structure du Repository</h2>
-<pre>
-Music-Genre-Classifier/
-├── notebooks/
-│   ├── main.ipynb              # Notebook détaillé contenant toutes les fonctions utilisées
-│   ├── simplified_main.ipynb   # Notebook allégé pour une lecture et une exécution plus rapide
-│   └── utils.py                # Fonctions utiles et scripts partagés
-├── src/
-│   ├── data_collection.py      # Script d'import des données via l'API Spotify
-│   ├── data_processing.py      # Nettoyage des données brutes
-│   └── train_model.py          # Entraînement du modèle de ML
-├── README.md
-├── requirements.txt
-└── .gitignore
-</pre>
+
 
 
 <h2 id="dataset">📊 Données</h2>
@@ -90,7 +77,7 @@ Music-Genre-Classifier/
 </ul>
 <p>Les appels à l'API ont été automatisés et les données ont été enregistrées au format CSV.</p>
 <p>Cependant comme expliqué dans les notebooks, un <a href="https://developer.spotify.com/blog/2024-11-27-changes-to-the-web-api">changement dans la politique de Spotify</a> apparu fin Novembre 2024 nous a empeché de terminer la construction de notre dataset. Voilà pourquoi nous utilisons dans les parties data-preprocessing, feature-engineering et train-model les données issues d'un <a href="https://www.kaggle.com/datasets/joebeachcapital/30000-spotify-songs">dataframe Kaggle</a> collectées quelques années auparavant de la même manière que nous avons pu mettre en place.
-  </p>
+</p>
 
 
 
