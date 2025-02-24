@@ -16,7 +16,7 @@
   <p>
     <strong>MAT-HEART-HEALTH-MONITORING</strong> est un projet qui prédit les genres musicaux en analysant les caractéristiques audio des morceaux. En utilisant des modèles d'apprentissage supervisé tels que RandomForest, XGBoost et CatBoost, ce projet classe les chansons en fonction de leurs attributs sonores, offrant ainsi une approche automatisée pour catégoriser les genres musicaux de manière précise.
     <br />
-    <a href="https://github.com/moranenzo/PY-Music-Genre-Classifier"><strong>Explorer »</strong></a>
+    <a href="https://github.com/Raphael-Pellure/MAT-HEART-HEALTH-MONITORING"><strong>Explorer »</strong></a>
     <br />
   </p>
 </div>
@@ -53,13 +53,14 @@
 <h1 id="about-the-project">À propos du projet</h1>
 
 <p>
-Ce projet repose sur la construction d'un ensemble de données combinant les informations collectées via l'API de Spotify et un second jeu de données provenant de Kaggle. Ces données contiennent des caractéristiques audio et des métadonnées de morceaux, permettant ainsi de classifier des genres musicaux. Le pipeline inclut la collecte automatisée des données, le prétraitement, ainsi que l'ingénierie des caractéristiques. Des modèles d'apprentissage supervisé tels que RandomForest, XGBoost et CatBoost sont ensuite entraînés et évalués à l'aide de métriques de performance telles que l'accuracy et le score F1, afin de garantir une prédiction précise des genres musicaux.
+Ce projet repose sur l'analyse de signaux PPG (Photoplethysmogram) dans le but de surveiller la santé cardiaque des patients. Il combine des techniques d'analyse spectrale et de filtrage pour extraire des caractéristiques importantes telles que la fréquence cardiaque et la vitesse d'onde de pouls (PWV). Le pipeline comprend la collecte et le prétraitement des données, suivi de l'extraction de caractéristiques et de l'application de tests statistiques pour détecter des anomalies cardiaques comme l'arythmie, la tachycardie et la bradycardie.
 </p>
 
 <p> Fonctionnalités principales :
-  <br />- Collecte des données via l'API Spotify.
-  <br />- Prétraitement des données et ingénierie des caractéristiques.
-  <br />- Entraînement et évaluation des modèles.
+  <br />- Collecte et préparation des signaux PPG.
+  <br />- Analyse spectrale et filtrage des données.
+  <br />- Extraction de caractéristiques et détection des anomalies cardiaques.
+  <br />- Visualisation de l'état de santé du patient.
 </p>
 
 
