@@ -7,14 +7,14 @@
 <!-- PROJECT BANNER -->
 <br />
 <div align="center">
-  <a href="https://github.com/moranenzo/PY-Music-Genre-Classifier">
-    <img src=".png">
+  <a href="https://github.com/Raphael-Pellure/MAT-HEART-HEALTH-MONITORING">
+    <img src="social_preview_TNS.png">
   </a>
 
-<h1 align="center">PY-Music-Genre-Classifier</h3>
+<h1 align="center">MAT-HEART-HEALTH-MONITORING</h3>
 
   <p>
-    <strong>PY-Music-Genre-Classifier</strong> est un projet qui prédit les genres musicaux en analysant les caractéristiques audio des morceaux. En utilisant des modèles d'apprentissage supervisé tels que RandomForest, XGBoost et CatBoost, ce projet classe les chansons en fonction de leurs attributs sonores, offrant ainsi une approche automatisée pour catégoriser les genres musicaux de manière précise.
+    <strong>MAT-HEART-HEALTH-MONITORING</strong> est un projet qui prédit les genres musicaux en analysant les caractéristiques audio des morceaux. En utilisant des modèles d'apprentissage supervisé tels que RandomForest, XGBoost et CatBoost, ce projet classe les chansons en fonction de leurs attributs sonores, offrant ainsi une approche automatisée pour catégoriser les genres musicaux de manière précise.
     <br />
     <a href="https://github.com/moranenzo/PY-Music-Genre-Classifier"><strong>Explorer »</strong></a>
     <br />
