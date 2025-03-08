@@ -6,7 +6,7 @@
 <!-- PROJECT BANNER -->
 <br />
 <div align="center">
-  <a href="https://github.com/Raphael-Pellure/MAT-HEART-HEALTH-MONITORING">
+  <a href="https://github.com/Raphael-Pellure/MAT-Heart-Health-Monitoring">
     <img src="social_preview_TNS.png">
   </a>
 
