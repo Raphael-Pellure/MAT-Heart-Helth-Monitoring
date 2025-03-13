@@ -13,7 +13,7 @@
 <h1 align="center">MAT-HEART-HEALTH-MONITORING</h3>
 
   <p>
-    <strong>MAT-HEART-HEALTH-MONITORING</strong> est un projet qui prédit les genres musicaux en analysant les caractéristiques audio des morceaux. En utilisant des modèles d'apprentissage supervisé tels que RandomForest, XGBoost et CatBoost, ce projet classe les chansons en fonction de leurs attributs sonores, offrant ainsi une approche automatisée pour catégoriser les genres musicaux de manière précise.
+    <strong>MAT-HEART-HEALTH-MONITORING</strong> est un projet qui analyse des signaux PPG pour le suivi de la santé cardiaque, en combinant analyse spectrale, filtrage et tests statistiques afin de détecter des anomalies telles que l’arythmie, la tachycardie et la bradycardie.
     <br />
     <a href="https://github.com/Raphael-Pellure/MAT-HEART-HEALTH-MONITORING"><strong>Explorer »</strong></a>
     <br />
@@ -104,9 +104,6 @@ Ce projet repose sur l'analyse de signaux PPG (Photoplethysmogram) dans le but d
 <h3 id="prerequisites">⚙️ Prérequis</h3>
 <ul>
   <li>Matlab installé</li>
-  <li>Bibliothèques nécessaires :
-    <pre><code>pip install -r requirements.txt</code></pre>
-  </li>
 </ul>
 
 
@@ -114,44 +111,30 @@ Ce projet repose sur l'analyse de signaux PPG (Photoplethysmogram) dans le but d
 <h3 id="installation">💻 Installation</h3>
 <ol>
   <li>Clonez le dépôt :
-    <pre><code>git clone https://github.com/moranenzo/PY-Music-Genre-Classifier.git</code></pre>
+    <pre><code>git clone https://github.com/Raphael-Pellure/MAT-Heart-Helth-Monitoring.git</code></pre>
   </li>
   <li>Accédez au répertoire du projet :
-    <pre><code>cd PY-Music-Genre-Classifier</code></pre>
+    <pre><code>cd MAT-Heart-Helth-Monitoring</code></pre>
   </li>
 </ol>
 
 
 
 <h1 id="usage">⚡ Utilisation</h1>
-<p>Exécutez la commande suivante pour entraîner le modèle <i>(CatBoost par défaut)</i>:</p>
-<pre><code>python src/train_model.py</code></pre>
+<p>-Choisir le signal à étudier directement dans le code</i></p>
 
-<p>Exécutez la commande suivante pour évaluer le modèle :</p>
-<pre><code>python src/evaluate_model.py</code></pre>
-
+<p>-Exécuter le programme</p>
 
 
 
 
 <h1 id="contact">📞 Contact</h1>
 <ul>
-  <li><strong>Enzo MORAN</strong> - <a href="https://www.linkedin.com/in/moranenzo/" target="_blank">LinkedIn</a> - <a href="mailto:enzo.moran@ensae.fr">enzo.moran@ensae.fr</a></li>
-  <li><strong>Martin CONTE</strong> - <a href="https://www.linkedin.com/in/martin-conte-7a3139286/" target="_blank">LinkedIn</a> - <a href="mailto:martin_conte@ensae.fr">martin_conte@ensae.fr</a></li>
-  <li><strong>Tom LAFLOTTE</strong> - <a href="https://www.linkedin.com/in/tom-laflotte-19a351293/" target="_blank">LinkedIn</a> - <a href="mailto:tom.laflotte@ensae.fr">tom.laflotte@ensae.fr</a></li>
+  <li><strong>Raphaël PELLURE</strong> - <a href="https://www.linkedin.com/in/raphaël-pellure/" target="_blank">LinkedIn</a> - <a href="mailto:raphaelpellure64@icloud.com">raphaelpellure64@icloud.com</a></li>
 </ul>
 
-<p>Projet : <a href="https://github.com/moranenzo/PY-Music-Genre-Classifier" target="_blank">https://github.com/moranenzo/PY-Music-Genre-Classifier</a></p>
+<p>Projet : <a href="https://github.com/Raphael-Pellure/MAT-Heart-Helth-Monitoring" target="_blank">https://github.com/Raphael-Pellure/MAT-Heart-Helth-Monitoring</a></p>
 
-
-
-
-<h1 id="acknowledgments">📚 Sources</h1>
-<ul>
-  <li><a href="https://developer.spotify.com/documentation/web-api/" target="_blank">Documentation de l'API Spotify</a></li>
-  <li><a href="https://contrib.rocks" target="_blank">Contrib.rocks</a></li>
-  <li><a href="https://docs.python.org/3/" target="_blank">Documentation Python</a></li>
-</ul>
 
 <p align="right">(<a href="#readme-top">retour en haut</a>)</p>
 
@@ -160,6 +143,6 @@ Ce projet repose sur l'analyse de signaux PPG (Photoplethysmogram) dans le but d
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/moranenzo/PY-Music-Genre-Classifier.svg?style=for-the-badge
-[contributors-url]: https://github.com/moranenzo/PY-Music-Genre-Classifier/graphs/contributors
+[contributors-shield]: https://github.com/Raphael-Pellure/MAT-Heart-Helth-Monitoring.svg?style=for-the-badge
+[contributors-url]: https://github.com/Raphael-Pellure/MAT-Heart-Helth-Monitoring/graphs/contributors
 [product-screenshot]: images/screenshot.png
