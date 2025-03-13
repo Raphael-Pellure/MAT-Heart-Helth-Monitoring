@@ -1,11 +1,11 @@
 function filtnum(action,s)
 % version 2007 puis 2010
 % plus besoin de zoom.m et de curseur.m
-% faire "View" "Figure Toolbar" pour avoir accès aux outils
-%%%%% problèmes restants : 
+% faire "View" "Figure Toolbar" pour avoir accÃ¨s aux outils
+%%%%% problÃ¨mes restants : 
 %%%%%    * "glitchs" dans calcul du TPG mais c'est la
-%%%%%     fonction grpdelay qui fait ça !
-%%%%%    * instabilité des filtres analogiques pour un ordre grand, mais là
+%%%%%     fonction grpdelay qui fait Ã§a !
+%%%%%    * instabilitÃ© des filtres analogiques pour un ordre grand, mais lÃ 
 %%%%%     aussi, c'est normal !
 global Fe F0 F1 F2 F3 dp da Wp Ws ftype ftemp autcourb nbcourb titrefiltre b a
 
@@ -32,8 +32,8 @@ if strcmp(action,'initialize'),
    
  %On a alors l'ordre: N=14
  
- %2. Influence de la fenêtre :___________________________________
- %Synthétiser le filtre RIF à cet ordre N avec la fenêtre rectangulaire, puis avec les autres fenêtres disponibles triangulaire, Hamming et Kaiser.
+ %2. Influence de la fenÃªtre :___________________________________
+ %SynthÃ©tiser le filtre RIF Ã  cet ordre N avec la fenÃªtre rectangulaire, puis avec les autres fenÃªtres disponibles triangulaire, Hamming et Kaiser.
  %Qu'en concluez-vous ?
  
  %On conclue que l'ordre du filtre est trop petit car il sort du gabarit 
@@ -50,10 +50,10 @@ if strcmp(action,'initialize'),
  
  %Nopt = 80
  
-%Mesurer l'influence de l'ordre sur les paramètres suivants :
+%Mesurer l'influence de l'ordre sur les paramÃ¨tres suivants :
 %la raideur de la pente: augmente avec N (vaut 0.037 pour Nopt)
-%la position de la fréquence de coupure à -3dB: 
-%la pseudo-période des lobes d'oscillation: 
+%la position de la frÃ©quence de coupure Ã  -3dB: 
+%la pseudo-pÃ©riode des lobes d'oscillation: 
  
  
  
@@ -65,14 +65,14 @@ if strcmp(action,'initialize'),
  
  
    %================
-   % Fenêtre globale
+   % FenÃªtre globale
    %================
    figNumber = figure( ...
 	'Visible','off', ...
 	'NumberTitle','off', ...
         'Position',[1 1 800 600], ...
         'Color',[0.75 0.8 0.7], ...
-	'Name','TP Filtrage Numérique : Synthèse d''un Filtre © 1997-1998-2003-2007-2010');
+	'Name','TP Filtrage NumÃ©rique : SynthÃ¨se d''un Filtre Â© 1997-1998-2003-2007-2010');
 
    Pos=[0.775 0.96 0.15 0.03];
    uicontrol( ...
@@ -81,7 +81,7 @@ if strcmp(action,'initialize'),
 	'Position',Pos, ...
 	'BackgroundColor',[0.45 0.50 0.5], ...
 	'ForegroundColor',[1 1 1], ...
-	'String',' © ENSEEIHT - TéSA');
+	'String',' Â© ENSEEIHT - TÃ©SA');
 % 2010 : Co rajoute ci-dessous :
 % Pos=[0.055 0.96 0.45 0.03];
 %    uicontrol( ...
@@ -90,11 +90,11 @@ if strcmp(action,'initialize'),
 % 	'Position',Pos, ...
 % 	'BackgroundColor',[0.65 0.50 0.5], ...
 % 	'ForegroundColor',[1 1 1], ...
-% 	'String','Pour avoir accès au zoom et au curseur, faire "view" puis "figure toolbar"');
-% finalement, j'ai trouvé plus bas : set(gcf,'Toolbar','figure');
+% 	'String','Pour avoir accÃ¨s au zoom et au curseur, faire "view" puis "figure toolbar"');
+% finalement, j'ai trouvÃ© plus bas : set(gcf,'Toolbar','figure');
 
    %==================
-   % Fenêtre graphique
+   % FenÃªtre graphique
    %==================
 
    axes( ...
@@ -126,7 +126,7 @@ if strcmp(action,'initialize'),
 	'2', ...    % Filtre Passe-Haut
 	'3', ...    % Filtre Coupe-Bande
 	'4', ...    % Filtre Passe-Bande
-	'5');...    % Filtre défini dans un fichier 
+	'5');...    % Filtre dÃ©fini dans un fichier 
 
    btnPos=[left top-labelHt (right-left) labelHt];
    win1=uicontrol( ...
@@ -139,7 +139,7 @@ if strcmp(action,'initialize'),
 	'UserData',cmdList);
 
    %=========================================
-   % Fenêtre définissant le gabarit du filtre
+   % FenÃªtre dÃ©finissant le gabarit du filtre
    %=========================================
 
    top=0.35;
@@ -155,7 +155,7 @@ if strcmp(action,'initialize'),
 	'Position',labelPos, ...
 	'BackgroundColor',[0.45 0.50 0.50], ...
 	'ForegroundColor',[1 1 1], ...
-	'String','Définition du gabarit du filtre');
+	'String','DÃ©finition du gabarit du filtre');
 
    mcwPos=[left top-6*labelHt (right-left) 4*labelHt];
    win2=uicontrol( ...
@@ -166,7 +166,7 @@ if strcmp(action,'initialize'),
 	'Position',mcwPos);
 
    %========================================================
-   % Fenêtre permettant de modifier les paramètres du filtre
+   % FenÃªtre permettant de modifier les paramÃ¨tres du filtre
    %========================================================
 
    top=0.35;
@@ -177,7 +177,7 @@ if strcmp(action,'initialize'),
    spacing=0.005;
    
    % 2010 co rajoute
-   labelStr='>>>> Pour changer les paramètres du gabarit, entrer dans la fenêtre ci-dessous par exemple : Fe=12345';
+   labelStr='>>>> Pour changer les paramÃ¨tres du gabarit, entrer dans la fenÃªtre ci-dessous par exemple : Fe=12345';
    labelPos=[0.05 labelHt+0.03 0.65 labelHt];
 
    uicontrol( ...
@@ -190,7 +190,7 @@ if strcmp(action,'initialize'),
 	'String',labelStr);
    %%%%%
    
-   labelStr=' Paramètres à modifier ';
+   labelStr=' ParamÃ¨tres Ã  modifier ';
    labelPos=[labelWid labelHt labelWid labelHt];
 
    uicontrol( ...
@@ -218,7 +218,7 @@ if strcmp(action,'initialize'),
    
    labelColor=[0.75 0.8 0.9];
    yInitPos=0.90;
-   menutop=0.9; %modifié Co au lieu de 0.95 pour aérer un peu
+   menutop=0.9; %modifiÃ© Co au lieu de 0.95 pour aÃ©rer un peu
    btnTop = 0.6;
    top=0.75;
    left=0.75;
@@ -232,12 +232,12 @@ if strcmp(action,'initialize'),
    frmHeight = 0.92; frmWidth = btnWid;
 
    %================================
-   % Choix de la méthode de synthèse
+   % Choix de la mÃ©thode de synthÃ¨se
    %================================
 
    btnNumber=1;
    yPos=menutop-(btnNumber-1)*(btnHt+spacing);
-   labelStr='Méthode de synthèse du filtre';
+   labelStr='MÃ©thode de synthÃ¨se du filtre';
    top = yPos - btnHt - spacing;
    labelWidth = frmWidth-.01;
    labelBottom=yPos-labelHt;
@@ -288,7 +288,7 @@ if strcmp(action,'initialize'),
 	'String',labelStr);
 %%%% 2010 Co rajoute les deux commentaires suivants
 yPos=menutop-(btnNumber-1)*(btnHt+spacing);
-   labelStr='       calculé automatiquement';
+   labelStr='       calculÃ© automatiquement';
    top = yPos - btnHt - spacing;
    labelWidth = frmWidth-.01;
    labelBottom=yPos-0.2*labelHt;
@@ -324,7 +324,7 @@ yPos=menutop-(btnNumber-1)*(btnHt+spacing)-0.02;
 
    btnTop = labelBottom-spacing;
    btnNumber=4;
-   yPos=menutop-(btnNumber-1)*(btnHt+spacing)+.005; % +.02 changé par Co
+   yPos=menutop-(btnNumber-1)*(btnHt+spacing)+.005; % +.02 changÃ© par Co
    labelStr='Automatique : ';
    callbackStr='filtnum(''radio'',1)';
    btnPos=[left yPos-0.3*btnHt btnWid*.6 btnHt];
@@ -337,7 +337,7 @@ yPos=menutop-(btnNumber-1)*(btnHt+spacing)-0.02;
 	'value',1,'Userdata',1, ...
 	'Callback',callbackStr);
 
-   yPos=menutop-(btnNumber-1)*(btnHt+spacing) + .005; % +.02 changé par Co
+   yPos=menutop-(btnNumber-1)*(btnHt+spacing) + .005; % +.02 changÃ© par Co
    textPos=[left+btnWid*.62 yPos-0.3*btnHt btnWid*.38 0.8*btnHt];
    ord1Hndl = uicontrol( ...
       'Style','text', ...
@@ -347,7 +347,7 @@ yPos=menutop-(btnNumber-1)*(btnHt+spacing)-0.02;
 	'String','22','Userdata',[22 -1]);
 
    %==============================
-   % Paramétrage par l'utilisateur
+   % ParamÃ©trage par l'utilisateur
    %==============================
 
    btnTop = labelBottom-spacing;
@@ -381,7 +381,7 @@ yPos=menutop-(btnNumber-1)*(btnHt+spacing)-0.02;
    %=====================
    % Gestion du graphique
    %=====================
-   % 2010 : co rajoute pour que ça saute mieux aux yeux !!!
+   % 2010 : co rajoute pour que Ã§a saute mieux aux yeux !!!
    btnNumber = 6;
    yPos=menutop-(btnNumber-1)*(btnHt+spacing);
    labelStr='Affichage du Temps de Propagation de Groupe';
@@ -408,10 +408,10 @@ btnNumber = 8; % au lieu de 7 (Co 2010)
    'String','TPG', ...
   	'Callback','filtnum(''tpsprop'')');
 
- % 2010 : co rajoute pour que ça soit plus clair
+ % 2010 : co rajoute pour que Ã§a soit plus clair
    btnNumber = 8;
    yPos=menutop-(btnNumber-1)*(btnHt+spacing);
-   labelStr='Paramètres du graphique';
+   labelStr='ParamÃ¨tres du graphique';
    top = yPos - btnHt - spacing;
    labelWidth = frmWidth-.01;
    labelBottom=yPos-0.2*labelHt;
@@ -459,14 +459,14 @@ YLOG = uicontrol( ...
    'Callback','filtnum(''axlog'')');
 
  
-   % Bouton "Représentation fréquentielle"
+   % Bouton "ReprÃ©sentation frÃ©quentielle"
 
 %    FREQ = uicontrol( ...
 % 	'Style','radiobutton', ...
 % 	'Units','normalized', ...
 % 	'BackgroundColor',[0.75 0.8 0.7], ...
 % 	'Position',[left menutop-7*btnHt btnWid-0.001 btnHt], ...
-% 	'String','Rep. fréquentielle', ...
+% 	'String','Rep. frÃ©quentielle', ...
 % 	'Visible', 'off', ...
 %    'Callback','filtnum(''filtrage'')');
 FREQ = uicontrol( ...
@@ -479,12 +479,12 @@ FREQ = uicontrol( ...
    'Callback','filtnum(''filtrage'')');
 
    %==========================
-   % Choix du signal à filtrer
+   % Choix du signal Ã  filtrer
    %==========================
 
    btnNumber=10;
    yPos=menutop-(btnNumber-1)*(btnHt+spacing);
-   labelStr='Signal à filtrer';
+   labelStr='Signal Ã  filtrer';
    top = yPos - btnHt - spacing;
    labelWidth = frmWidth-.01;
    labelBottom=yPos-0.3*labelHt;
@@ -529,13 +529,13 @@ FREQ = uicontrol( ...
 
 
    %===============================
-   % Choix des fréquences des sinus
+   % Choix des frÃ©quences des sinus
    %===============================
 
     btnTop = labelBottom-spacing;
     btnNumber=12;
     yPos=menutop-(btnNumber-1)*(btnHt+spacing)+.02;
-    labelStr='Fréq. 1 :';
+    labelStr='FrÃ©q. 1 :';
     callbackStr='filtnum(''changesin'')';
     btnPos=[left yPos-0.05*btnHt btnWid*.6 btnHt];
     fr1=uicontrol( ...
@@ -560,7 +560,7 @@ FREQ = uicontrol( ...
 	'callback',callbackStr);
 
    yPos=menutop-(btnNumber-1)*(btnHt+spacing)+.02;
-   labelStr='Fréq. 2 :';
+   labelStr='FrÃ©q. 2 :';
    callbackStr='filtnum(''changesin'')';
    btnPos=[left yPos-btnHt btnWid*.6 btnHt];
    fr2=uicontrol( ...
@@ -588,8 +588,8 @@ FREQ = uicontrol( ...
    %===========
    % Sauvegarde
    %===========
-   %%% 2010 : on ne s'en sert pas ! mieux vaut utiliser fdatool pour ça...
-   % on laisse le minimum pour éviter des erreurs sur hndlList
+   %%% 2010 : on ne s'en sert pas ! mieux vaut utiliser fdatool pour Ã§a...
+   % on laisse le minimum pour Ã©viter des erreurs sur hndlList
 
    btnTop = labelBottom-spacing;
    btnNumber=13;
@@ -600,7 +600,7 @@ FREQ = uicontrol( ...
    cmdList=str2mat('1','2');
 %	'1', ...    % Aucune
 % 	'2', ...    % Gabarit du filtre
-% 	'3',...    % Courbe affichée
+% 	'3',...    % Courbe affichÃ©e
 %    '2');      % coefficients du filtre
 
    uicontrol( ...
@@ -623,9 +623,9 @@ FREQ = uicontrol( ...
    %=====
    % Info
    %=====
-   % 2010 : le bouton ne sert à rien (aucun effet)
-   % on l'enlève
-     % on laisse le minimum pour éviter des erreurs sur hndlList
+   % 2010 : le bouton ne sert Ã  rien (aucun effet)
+   % on l'enlÃ¨ve
+     % on laisse le minimum pour Ã©viter des erreurs sur hndlList
 
 %     labelStr='Info';
 %    callbackStr='filtnum(''info'')';
@@ -650,7 +650,7 @@ helpHndl = 0;
 	'String',labelStr, ...
 	'Callback',callbackStr);
 
-%%% reset rajouté par Co 2010
+%%% reset rajoutÃ© par Co 2010
 labelStr='Reset';
    callbackStr='filtnum(''reset'')';
    closeHndl=uicontrol( ...
@@ -716,14 +716,14 @@ elseif strcmp(action,'gabarit'),
 	set(win1,'Value',ftype);
 	filtre = get(win1,'Value');
    end
-   if filtre==1% modifs co 2010 : il y avait marqué "D1dB" et "D2dB" au lieu de
+   if filtre==1% modifs co 2010 : il y avait marquÃ© "D1dB" et "D2dB" au lieu de
       % "dp" et "da"
-      % + rajout de la dernière ligne pour expliquer comment modifier les
-      % paramètres
+      % + rajout de la derniÃ¨re ligne pour expliquer comment modifier les
+      % paramÃ¨tres
 	message = str2mat(...
-      [' Fréquence d''échantillonnage : 		     Fe = '	num2str(Fe) 'Hz'], ...
-      [' Fréquence bornant la bande passante :	  F1 = '	num2str(F1) 'Hz'], ...
-      [' Fréquence bornant la bande affaiblie :	  F2 = '	num2str(F2) 'Hz'], ...
+      [' FrÃ©quence d''Ã©chantillonnage : 		     Fe = '	num2str(Fe) 'Hz'], ...
+      [' FrÃ©quence bornant la bande passante :	  F1 = '	num2str(F1) 'Hz'], ...
+      [' FrÃ©quence bornant la bande affaiblie :	  F2 = '	num2str(F2) 'Hz'], ...
       [' Oscillations dans la bande passante : dp=20log10( (1+delta1)/(1-delta1) ) = '	num2str(dp) 'dB'], ...
       [' Oscillations dans la bande affaiblie : da=20log10(1/delta2) = '	num2str(da) 'dB']);
 	Wp = F1;
@@ -731,9 +731,9 @@ elseif strcmp(action,'gabarit'),
 	ftype = 1;
    elseif filtre==2
 	message = str2mat(...
-      [' Fréquence d''échantillonnage : 	  	     Fe = '	num2str(Fe) 'Hz'], ...
-      [' Fréquence bornant la bande passante :	  F2 = '	num2str(F2) 'Hz'], ...
-      [' Fréquence bornant la bande affaiblie :	  F1 = '	num2str(F1) 'Hz'], ...
+      [' FrÃ©quence d''Ã©chantillonnage : 	  	     Fe = '	num2str(Fe) 'Hz'], ...
+      [' FrÃ©quence bornant la bande passante :	  F2 = '	num2str(F2) 'Hz'], ...
+      [' FrÃ©quence bornant la bande affaiblie :	  F1 = '	num2str(F1) 'Hz'], ...
       [' Oscillations dans la bande passante : dp=20log10( (1+delta1)/(1-delta1) ) ='	num2str(dp) 'dB'], ...
       [' Oscillations dans la bande affaiblie : da=20log10(1/delta2) = '		num2str(da) 'dB']);
 	Wp = F2;
@@ -741,9 +741,9 @@ elseif strcmp(action,'gabarit'),
 	ftype = 2;
    elseif filtre==3
 	message = str2mat(...
-           [' Fréquence d''échantillonnage : 		Fe = '	num2str(Fe) 'Hz'], ...
-           [' Fréquences bornant les bandes passantes :	F0 = '	num2str(F0) 'Hz et F3 = '	num2str(F3) 'Hz'], ...
-           [' Fréquences bornant la bande affaiblie :	F1 = '	num2str(F1) 'Hz et F2 = '	num2str(F2) 'Hz'], ...
+           [' FrÃ©quence d''Ã©chantillonnage : 		Fe = '	num2str(Fe) 'Hz'], ...
+           [' FrÃ©quences bornant les bandes passantes :	F0 = '	num2str(F0) 'Hz et F3 = '	num2str(F3) 'Hz'], ...
+           [' FrÃ©quences bornant la bande affaiblie :	F1 = '	num2str(F1) 'Hz et F2 = '	num2str(F2) 'Hz'], ...
         [' Oscillations dans la bande passante : dp=20log10( (1+delta1)/(1-delta1) ) ='	num2str(dp) 'dB'], ...
       [' Oscillations dans la bande affaiblie : da=20log10(1/delta2) = '	num2str(da) 'dB']);
 	Ws = [F1 F2];
@@ -751,9 +751,9 @@ elseif strcmp(action,'gabarit'),
 	ftype = 3;
    elseif filtre==4
 	message = str2mat(...
-           [' Fréquence d''échantillonnage : 		Fe = '	num2str(Fe) 'Hz'], ...
-           [' Fréquences bornant la bande passante :	F1 = '	num2str(F1) 'Hz et F2 = '	num2str(F2) 'Hz'], ...
-           [' Fréquences bornant les bandes affaiblies :	F0 = '	num2str(F0) 'Hz et F3 = '	num2str(F3) 'Hz'], ...
+           [' FrÃ©quence d''Ã©chantillonnage : 		Fe = '	num2str(Fe) 'Hz'], ...
+           [' FrÃ©quences bornant la bande passante :	F1 = '	num2str(F1) 'Hz et F2 = '	num2str(F2) 'Hz'], ...
+           [' FrÃ©quences bornant les bandes affaiblies :	F0 = '	num2str(F0) 'Hz et F3 = '	num2str(F3) 'Hz'], ...
     [' Oscillations dans la bande passante : dp=20log10( (1+delta1)/(1-delta1) ) ='	num2str(dp) 'dB'], ...
       [' Oscillations dans la bande affaiblie : da=20log10(1/delta2) = '	num2str(da)  'dB']);
 	Ws = [F0 F3];
@@ -846,10 +846,10 @@ elseif strcmp(action,'changemethod'),
 	set(hndlList(6),'enable','off')
 	set(hndlList(6),'value',0,'userdata',2);
 	set(hndlList(7),'value',1)
-   %else % co modifie en 2010 pour garder l'ordre choisi en changeant de méthode
-       % comme ça, en faisant hold, on peut comparer plusieurs filtres pour
-       % le même ordre : on enlève tout le "else"
-       %disp('coucou'); %pour vérifier qu'on passe là en changeant de
+   %else % co modifie en 2010 pour garder l'ordre choisi en changeant de mÃ©thode
+       % comme Ã§a, en faisant hold, on peut comparer plusieurs filtres pour
+       % le mÃªme ordre : on enlÃ¨ve tout le "else"
+       %disp('coucou'); %pour vÃ©rifier qu'on passe lÃ  en changeant de
        %filtre
 	%set(hndlList(6),'enable','on')
 	%set(hndlList(6),'value',1,'userdata',1);
@@ -875,7 +875,7 @@ elseif strcmp(action,'setord'),
    s = get(gco,'String');
    vv = eval(s,num2str(v(1)));
    %if vv<3, vv = v; end 
-   % co enlève la contrainte, pose souci pour fenêtre
+   % co enlÃ¨ve la contrainte, pose souci pour fenÃªtre
    % triangulaire et remez
    set(gco,'Userdata',vv,'String',num2str(vv))
    if vv~=v
@@ -927,10 +927,10 @@ elseif strcmp(action,'design'), % Design filter
    hndlList=get(gcf,'Userdata');
    freqzHndl = hndlList(1);
    viewHndl = hndlList(10);
-   btn1Hndl = hndlList(6); % bouton allumé ou pas
-   btn2Hndl = hndlList(7); % bouton allumé ou pas
-   ord1Hndl = hndlList(8); % valeur associée : ordre estimé
-   ord2Hndl = hndlList(9); % valeur associée : ordre entré par utilisateur
+   btn1Hndl = hndlList(6); % bouton allumÃ© ou pas
+   btn2Hndl = hndlList(7); % bouton allumÃ© ou pas
+   ord1Hndl = hndlList(8); % valeur associÃ©e : ordre estimÃ©
+   ord2Hndl = hndlList(9); % valeur associÃ©e : ordre entrÃ© par utilisateur
    methodHndl = hndlList(5);
    HOLDDD = hndlList(15);
    colors = get(gca,'colororder'); 
@@ -972,11 +972,11 @@ else
 	set(ord1Hndl,'Userdata',[n wn],'String',num2str(n))
    end
  
-   % détermine l'ordre à utiliser : estimé ou par défaut
+   % dÃ©termine l'ordre Ã  utiliser : estimÃ© ou par dÃ©faut
    estim = get(btn1Hndl,'UserData') ;
    order = get(ord1Hndl,'UserData') ; % use estimated Filter order
    wn = order(2:length(order));    % use estimated cutoff even for "specified order" case
-   order = order(1); % ordre choisi par l'utilisateur (entré)
+   order = order(1); % ordre choisi par l'utilisateur (entrÃ©)
    % estim=1 : ordre auto, estim=2 : ordre choisi
    if estim ~= 1 %  
 	order = get(ord2Hndl,'UserData'); % use specified Filter order
@@ -987,7 +987,7 @@ else
 	order = get(ord2Hndl,'UserData'); % use specified Filter order
    end
   
-   % Réponse fréquentielle et pondération pour les RIF
+   % RÃ©ponse frÃ©quentielle et pondÃ©ration pour les RIF
    if ftype==1
 	f = [0 Wp Ws Fs/2]/Fs*2;
 	m = [1  1  0 0];
@@ -1015,17 +1015,17 @@ else
    % calcul du filtre
    ord = 2*fix((order-1)/2); % on fixe ord PAIR
    if method==5,
-       % co commente : pourquoi faire une différence ? on le fait pour tous
+       % co commente : pourquoi faire une diffÃ©rence ? on le fait pour tous
        % (forcer un ordre impair) ou pas
 %  	if (ftype==2)|(ftype==3)
-% 	   ord = 2*fix((order+1)/2); % forçage à ord PAIR
+% 	   ord = 2*fix((order+1)/2); % forÃ§age Ã  ord PAIR
 %  	elseif (ftype==1)|(ftype==4)
 %  	   ord = order;
 %  	end
 
-    %ord = order-1; % cf routine matlab, fait en fait un filtre à N+1 coefs !
+    %ord = order-1; % cf routine matlab, fait en fait un filtre Ã  N+1 coefs !
 	b = remez(ord,f,m,w); a = 1;
-    titrefiltre = ['Filtre RIF d''ordre ' num2str(order) ' optimisé avec REMEZ'];
+    titrefiltre = ['Filtre RIF d''ordre ' num2str(order) ' optimisÃ© avec REMEZ'];
     title(titrefiltre);
 	%title_str = sprintf(titrefiltre,order);
    elseif method==6,
@@ -1034,13 +1034,13 @@ else
 % 	elseif (ftype==1)|(ftype==4)
 % 	   ord = order;
 % 	end
-    %ord = order-1; % cf routine matlab, fait en fait un filtre à N+1 coefs !
+    %ord = order-1; % cf routine matlab, fait en fait un filtre Ã  N+1 coefs !
 	b = firls(ord,f,m,w); a = 1;
-    titrefiltre=['Filtre RIF d''ordre ' num2str(order) ' optimisé avec Moindres Carrés'];
+    titrefiltre=['Filtre RIF d''ordre ' num2str(order) ' optimisÃ© avec Moindres CarrÃ©s'];
     title(titrefiltre);
 	%title_str = sprintf(titrefiltre,order);
     elseif method==1, % boxcar window
-        %ord = order-1; % cf routine matlab, fait en fait un filtre à N+1 coefs !
+        %ord = order-1; % cf routine matlab, fait en fait un filtre Ã  N+1 coefs !
 	if ftype==1
 	   %ord = order;
 	   b = fir1(ord,(Wp+(Ws-Wp)/2)*2/Fs,boxcar(ord+1)); a = 1; %Co : pour avoir vraiment un ordre N, il faut rentrer N-1 !!!
@@ -1052,16 +1052,16 @@ else
        % sinon, erreur et warning
        % Warning: Odd order symmetric FIR filters must have a gain of zero 
        % at the Nyquist frequency. The order is being increased by one.
-	   b = fir1(ord,(Wp+(Ws-Wp)/2)*2/Fs,'stop',boxcar(ord+1)); a = 1; % problème
+	   b = fir1(ord,(Wp+(Ws-Wp)/2)*2/Fs,'stop',boxcar(ord+1)); a = 1; % problÃ¨me
 	elseif ftype==4
 	   %ord = order;
 	   b = fir1(ord,(Wp+(Ws-Wp)/2)*2/Fs,boxcar(ord+1)); a = 1;
     end
-    titrefiltre = ['Filtre RIF d''ordre ' num2str(order) ' réalisé avec une fenêtre rectangulaire'];
+    titrefiltre = ['Filtre RIF d''ordre ' num2str(order) ' rÃ©alisÃ© avec une fenÃªtre rectangulaire'];
     title(titrefiltre);
 	%title_str = sprintf(titrefiltre,order);
     elseif method==2, % triang window
-        %ord = order-1; % cf routine matlab, fait en fait un filtre à N+1 coefs !
+        %ord = order-1; % cf routine matlab, fait en fait un filtre Ã  N+1 coefs !
 	if ftype==1
 	  % ord = order;
 	   b = fir1(ord,(Wp+(Ws-Wp)/2)*2/Fs,bartlett(ord+1)); a = 1;
@@ -1075,11 +1075,11 @@ else
 	  % ord = order;
 	   b = fir1(ord,(Wp+(Ws-Wp)/2)*2/Fs,bartlett(ord+1)); a = 1;
     end
-     titrefiltre = ['Filtre RIF d''ordre ' num2str(order) ' réalisé avec une fenêtre triangulaire'];
+     titrefiltre = ['Filtre RIF d''ordre ' num2str(order) ' rÃ©alisÃ© avec une fenÃªtre triangulaire'];
     title(titrefiltre);
 	%title_str = sprintf(titrefiltre,order);
     elseif method==3, % Hamming window
-       % ord = order-1; % cf routine matlab, fait en fait un filtre à N+1 coefs !
+       % ord = order-1; % cf routine matlab, fait en fait un filtre Ã  N+1 coefs !
 	if ftype==1
 	  % ord = order;
 	   b = fir1(ord,(Wp+(Ws-Wp)/2)*2/Fs,hamming(ord+1)); a = 1;
@@ -1093,11 +1093,11 @@ else
 	   %ord = order;
 	   b = fir1(ord,(Wp+(Ws-Wp)/2)*2/Fs,hamming(ord+1)); a = 1;
     end
-     titrefiltre = ['Filtre RIF d''ordre ' num2str(order) ' réalisé avec une fenêtre de Hamming'];
+     titrefiltre = ['Filtre RIF d''ordre ' num2str(order) ' rÃ©alisÃ© avec une fenÃªtre de Hamming'];
     title(titrefiltre);
 	%title_str = sprintf(titrefiltre,order);
     elseif method==4, % Kaiser window
-       % ord = order-1; % cf routine matlab, fait en fait un filtre à N+1 coefs !
+       % ord = order-1; % cf routine matlab, fait en fait un filtre Ã  N+1 coefs !
 	if ftype==1
 	   %ord = order;
 	   b = fir1(ord,(Wp+(Ws-Wp)/2)*2/Fs,kaiser(ord+1,wn)); a = 1;
@@ -1111,7 +1111,7 @@ else
 	  % ord = order;
 	   b = fir1(ord,(Wp+(Ws-Wp)/2)*2/Fs,kaiser(ord+1,wn)); a = 1;
     end
-     titrefiltre = ['Filtre RIF d''ordre ' num2str(order) ' réalisé avec une fenêtre de Kaiser'];
+     titrefiltre = ['Filtre RIF d''ordre ' num2str(order) ' rÃ©alisÃ© avec une fenÃªtre de Kaiser'];
     title(titrefiltre);
 	%title_str = sprintf(titrefiltre,order);
    elseif method==7, % butterworth
@@ -1124,7 +1124,7 @@ else
 	elseif ftype==4
 	   [b,a] = butter(order,wn);
     end
-     titrefiltre = ['Filtre RII d''ordre ' num2str(order) ' réalisé avec un Butterworth'];
+     titrefiltre = ['Filtre RII d''ordre ' num2str(order) ' rÃ©alisÃ© avec un Butterworth'];
     title(titrefiltre);
 	%title_str = sprintf(titrefiltre,order);
    elseif method==8, % chebyshev type I
@@ -1137,7 +1137,7 @@ else
 	elseif ftype==4
 	   [b,a] = cheby1(order,Rp,wn);
     end
-    titrefiltre = ['Filtre RII d''ordre ' num2str(order) ' réalisé avec un Chebyshev I'];
+    titrefiltre = ['Filtre RII d''ordre ' num2str(order) ' rÃ©alisÃ© avec un Chebyshev I'];
     title(titrefiltre);
 	%title_str = sprintf(titrefiltre,order);
    elseif method==9, % chebyshev type II
@@ -1150,7 +1150,7 @@ else
 	elseif ftype==4
 	   [b,a] = cheby2(order,Rs,wn);
     end
-    titrefiltre = ['Filtre RII d''ordre ' num2str(order) ' réalisé avec un Chebyshev II'];
+    titrefiltre = ['Filtre RII d''ordre ' num2str(order) ' rÃ©alisÃ© avec un Chebyshev II'];
     title(titrefiltre);
 	%title_str = sprintf(titrefiltre,order);
    elseif method==10, % elliptic
@@ -1163,16 +1163,16 @@ else
 	elseif ftype==4
 	   [b,a] =ellip(order,Rp,Rs,wn);
     end
-    titrefiltre = ['Filtre RII d''ordre ' num2str(order) ' réalisé avec un Cauer'];
+    titrefiltre = ['Filtre RII d''ordre ' num2str(order) ' rÃ©alisÃ© avec un Cauer'];
     title(titrefiltre);
 	%title_str = sprintf(titrefiltre,order);
    end
    if nbcourb>0
-       titrefiltre = 'Filtre numérique réalisé par %g méthodes';
+       titrefiltre = 'Filtre numÃ©rique rÃ©alisÃ© par %g mÃ©thodes';
         title(titrefiltre);
    end   
    [H,F] = freqz(b,a,max( 2048,nextpow2(5*max(length(b),length(a))) ),Fs);
-   H = 20*log10(abs(H)); % c'est |H(f)|²
+   H = 20*log10(abs(H)); % c'est |H(f)|Â²
    axhndlList = get(freqzHndl,'UserData');
    if isempty(axhndlList)   % first time - happens at initialization phase
 	% initialisation des axes
@@ -1190,8 +1190,8 @@ else
 	axhndlList = hndl;
 	set(freqzHndl,'UserData',axhndlList)
 	set(freqzHndl,'xlim',[0 Fs/2],'ylim',[-Rs*(1.5) max(2*Rp,Rs*.1)])
-	xlabel('Fréquence (Hz)')
-   ylabel('Amplitude (dB) : 10log_{10}(  |H(f)|² )')
+	xlabel('FrÃ©quence (Hz)')
+   ylabel('Amplitude (dB) : 10log_{10}(  |H(f)|Â² )')
    %zoom on
    else
 	if length(a) > 1
@@ -1235,7 +1235,7 @@ elseif strcmp(action,'axesredraw'), % redraw axes
    Rs = da;            % stopband attenuation
    method = get(methodHndl,'value'); 
 
-   % Réponse fréquentielle et pondération
+   % RÃ©ponse frÃ©quentielle et pondÃ©ration
    if ftype==1
 	f = [0 Wp Ws Fs/2]/Fs*2;
 	m = [1  1  0 0];
@@ -1319,8 +1319,8 @@ elseif strcmp(action,'axesredraw'), % redraw axes
 	end
 	set(freqzHndl,'xlim',[0 Fs/2],'ylim',...
 		[min(22*log10(1-(10^(Rp/20)-1)/(10^(Rp/20)+1)),-Rs*(1.5)) max(2*20*log10(1+(10^(Rp/20)-1)/(10^(Rp/20)+1)),Rs*.1)])
-	xlabel('Fréquence (Hz)')
-	ylabel('Amplitude (dB) : 10log_{10}(  |H(f)|² )')
+	xlabel('FrÃ©quence (Hz)')
+	ylabel('Amplitude (dB) : 10log_{10}(  |H(f)|Â² )')
    else
 	if method >= 1 & method <= 6      % FIR case
 	   above = 1+(10^(Rp/20)-1)/(10^(Rp/20)+1);
@@ -1348,7 +1348,7 @@ elseif strcmp(action,'axesredraw'), % redraw axes
 	end
 	set(freqzHndl,'xlim',[0 Fs/2],'ylim',...
 	   [0 1.5])
-	xlabel('Fréquence (Hz)')
+	xlabel('FrÃ©quence (Hz)')
 	ylabel('Amplitude |H(f)|')
    end
    set(gcf,'Pointer','arrow');
@@ -1377,8 +1377,8 @@ elseif strcmp(action,'tpsprop'),
 	end
 	[Gd,fr] = grpdelay(b,a,max( 2048,nextpow2(5*max(length(b),length(a))) ),Fs);
     % solution ci-dessous ne marche pas...
-%     % pour éviter les "glitchs" dus sans doute à des pbs de calcul dans
-%     % grpdelay, Co 2010 rajoute un filtrage médian du résultat (hum !)
+%     % pour Ã©viter les "glitchs" dus sans doute Ã  des pbs de calcul dans
+%     % grpdelay, Co 2010 rajoute un filtrage mÃ©dian du rÃ©sultat (hum !)
 %     Gd2 = zeros(size(Gd)); B = 55; %taille filtre median
 %     Gd2(1:(B-1)/2)=Gd(1:(B-1)/2); Gd2(end-(B-1)/2:end)=Gd(end-(B-1)/2:end);
 %     for k=(B-1)/2+1:length(Gd)-(B-1)/2-1,
@@ -1401,15 +1401,15 @@ elseif strcmp(action,'tpsprop'),
 		b = h; a = 1;
 	   end
 	   [Gd,fr] = grpdelay(b,a,max( 2048,nextpow2(5*max(length(b),length(a))) ),Fs);
-%        % pour éviter les "glitchs" dus sans doute à des pbs de calcul dans
-%     % grpdelay, Co 2010 rajoute un filtrage médian du résultat (hum !)
+%        % pour Ã©viter les "glitchs" dus sans doute Ã  des pbs de calcul dans
+%     % grpdelay, Co 2010 rajoute un filtrage mÃ©dian du rÃ©sultat (hum !)
 %     Gd2 = zeros(size(Gd)); B = 55; %taille filtre median
 %     Gd2(1:(B-1)/2)=Gd(1:(B-1)/2); Gd2(end-(B-1)/2:end)=Gd(end-(B-1)/2:end);
 %     for k=(B-1)/2+1:length(Gd)-(B-1)/2-1,
 %         Gd2(k) = median(Gd(k-(B-1)/2:k+(B-1)/2));
 %     end
 %     Gd = Gd2; clear Gd2;
-%     %%%% fin filtrage médian
+%     %%%% fin filtrage mÃ©dian
 	   minusf = min(minusf,min(fr));
 	   maxusf = max(maxusf,max(fr));
 	   minusG = min(minusG,min(Gd));
@@ -1423,7 +1423,7 @@ elseif strcmp(action,'tpsprop'),
 	clear minusG;
 	clear maxusG;
     title(titrefiltre);
-	xlabel('Fréquence (Hz)')
+	xlabel('FrÃ©quence (Hz)')
 	ylabel('TPG')
    else
 	h = get(axhndlList(1),'userdata');
@@ -1460,13 +1460,13 @@ elseif strcmp(action,'tpsprop'),
 	   set(freqzHndl,'xlim',[0 Fs/2],'ylim',...
 		[min(22*log10(1-(10^(Rp/20)-1)/(10^(Rp/20)+1)),-Rs*(1.5)) max(2*20*log10(1+(10^(Rp/20)-1)/(10^(Rp/20)+1)),Rs*.1)])
          title(titrefiltre);
-	   xlabel('Fréquence (Hz)')
-	   ylabel('Amplitude (dB) : 10log_{10}(  |H(f)|² )')
+	   xlabel('FrÃ©quence (Hz)')
+	   ylabel('Amplitude (dB) : 10log_{10}(  |H(f)|Â² )')
 	else
 	   set(freqzHndl,'xlim',[0 Fs/2],'ylim',...
 		[0 1.5]);
         title(titrefiltre);
-	   xlabel('Fréquence (Hz)')
+	   xlabel('FrÃ©quence (Hz)')
 	   ylabel('Amplitude')
 	end
    end
@@ -1551,8 +1551,8 @@ elseif strcmp(action,'axlog'),
 	set(freqzHndl,'xlim',[0 Fs/2],'ylim',...
 	   [min(22*log10(1-(10^(Rp/20)-1)/(10^(Rp/20)+1)),-Rs*(1.5)) max(2*20*log10(1+(10^(Rp/20)-1)/(10^(Rp/20)+1)),Rs*.1)])
    title(titrefiltre);
-	xlabel('Fréquence (Hz)')
-	ylabel('Amplitude (dB) : 10log_{10}(  |H(f)|² )')
+	xlabel('FrÃ©quence (Hz)')
+	ylabel('Amplitude (dB) : 10log_{10}(  |H(f)|Â² )')
    elseif (~get(YLOG,'Value')) &(~get(PROP,'Value'))
 	v = get(axhndlList(1),'Ydata');
 	set(axhndlList(1),'Ydata',10.^(v/20));
@@ -1587,7 +1587,7 @@ elseif strcmp(action,'axlog'),
 	end
 	set(freqzHndl,'xlim',[0 Fs/2],'ylim',[0 1.5]);
     title(titrefiltre);
-	xlabel('Fréquence (Hz)')
+	xlabel('FrÃ©quence (Hz)')
 	ylabel('Amplitude |H(f)|')
    else
 	set(YLOG,'Value',~get(YLOG,'Value'));
@@ -1660,7 +1660,7 @@ elseif strcmp(action,'commut'),
    valfr2 = hndlList(23);
    axhndlList = get(freqzHnd,'UserData');
    if strcmp(get(filtHndl,'Visible'),'off') 
-	set(gcf,'Name','TP Filtrage Numérique : Synthèse d''un Filtre © 1997-1998-2003-2007-2010');
+	set(gcf,'Name','TP Filtrage NumÃ©rique : SynthÃ¨se d''un Filtre Â© 1997-1998-2003-2007-2010');
 	set(filtHndl,'Visible','on');
 	set(PROP,'Visible','on'); 
 	set(YLOG,'Visible','on'); 
@@ -1677,7 +1677,7 @@ elseif strcmp(action,'commut'),
 	set(axhndlList(2),'Xdata',x,'Ydata',y); 
 	set(axhndlList(3),'Visible','on');
    else
-	set(gcf,'Name','TP Filtrage Numérique : Filtrage d''un Signal © 1997-1998-2003-2007-2010');
+	set(gcf,'Name','TP Filtrage NumÃ©rique : Filtrage d''un Signal Â© 1997-1998-2003-2007-2010');
 	set(filtHndl,'Visible','off');
 	set(PROP,'Value',0);
 	filtnum('tpsprop');
@@ -1715,7 +1715,7 @@ elseif strcmp(action,'filtrage'),
    axhndlList = get(freqzHnd,'UserData');
    Fs = Fe;
    t = (1:Fs)/Fs;
-   % définition du vecteur f mise plus loin
+   % dÃ©finition du vecteur f mise plus loin
    if get(signalHndl,'Value')==1
 	signal = [1 zeros(1,Fs-1)];
 	set(fr1,'Visible','off');
@@ -1771,16 +1771,16 @@ elseif strcmp(action,'filtrage'),
 	set(axhndlList(2),'XData',t,'YData',sf);
 	axis([0 1 1.5*minus 1.5*maxus]);         
 	xlabel('Temps (s)');
-    title('En bleu, signal en entrée --- en jaune-vert, signal en sortie du filtre'); 
-   else    %%%%% attention la FFT est mal faite ! et le zero padding ??? corrigé co 2010, on rajoute nfft
+    title('En bleu, signal en entrÃ©e --- en jaune-vert, signal en sortie du filtre'); 
+   else    %%%%% attention la FFT est mal faite ! et le zero padding ??? corrigÃ© co 2010, on rajoute nfft
 	maxus = max(max((abs(fftshift(fft(signal,nfft))).^2)),max((abs(fftshift(fft(sf,nfft))).^2)));
-    % 2012 : on décale pour mieux voir
-    set(axhndlList(1),'Xdata',f,'Ydata',(abs(fftshift(fft(signal,nfft))).^2)+maxus); % on enlève le /Fs ???
+    % 2012 : on dÃ©cale pour mieux voir
+    set(axhndlList(1),'Xdata',f,'Ydata',(abs(fftshift(fft(signal,nfft))).^2)+maxus); % on enlÃ¨ve le /Fs ???
 	set(axhndlList(2),'XData',f,'YData',(abs(fftshift(fft(sf,nfft))).^2));
 	axis([-Fs/2 Fs/2 0 2.5*maxus]);         
-	xlabel('Fréquence (Hz)');
+	xlabel('FrÃ©quence (Hz)');
     hold on; plot([-Fs/2 Fs/2],[maxus maxus],'b-.');
-    title({'En bleu, DSP du signal en entrée (décalée - 0 = ligne pointillée bleue)';'En jaune-vert, DSP du signal en sortie du filtre'});
+    title({'En bleu, DSP du signal en entrÃ©e (dÃ©calÃ©e - 0 = ligne pointillÃ©e bleue)';'En jaune-vert, DSP du signal en sortie du filtre'});
    end                           
    ylabel('Amplitude |H(f)|');                           
    for k=2:nbcourb
@@ -1829,55 +1829,55 @@ elseif strcmp(action,'changesin'),
 
 % elseif strcmp(action,'info'),
 %    set(gcf,'pointer','arrow')
-%    ttlStr = 'Synthèse d''un filtre';
+%    ttlStr = 'SynthÃ¨se d''un filtre';
 %    hlpStr1= [...
-% 	' Ce TP permet de réaliser des filtres                '
-% 	' numériques RIF ou RII par différentes               '
-% 	' méthodes.                                           '
+% 	' Ce TP permet de rÃ©aliser des filtres                '
+% 	' numÃ©riques RIF ou RII par diffÃ©rentes               '
+% 	' mÃ©thodes.                                           '
 % 	'                                                     '
 % 	' On peut obtenir des filtres passe-bas,              '
 % 	' des filtres passe-haut, des filtres                 '
 % 	' coupe-bande et des filtres passe-bande.             '
 % 	'                                                     '
-% 	' On peut paramétrer la fréquence                     '
-% 	' d`échantillonnage (Fe), les fréquences              '
+% 	' On peut paramÃ©trer la frÃ©quence                     '
+% 	' d`Ã©chantillonnage (Fe), les frÃ©quences              '
 % 	' de coupure (F0, F1, F2, F3),                        '
 % 	' l`amplitude des oscillations en bande               '
-% 	' passante et en bande atténuée (dp, da)  '
+% 	' passante et en bande attÃ©nuÃ©e (dp, da)  '
 % 	' et l`ordre du filtre.                               '
 % 	'                                                     '
-% 	' L`ordre du filtre peut être estimé                  ' 
+% 	' L`ordre du filtre peut Ãªtre estimÃ©                  ' 
 % 	' ("Auto") ou choisi par l`utilisateur                '
-% 	' ("Sélection").                                      '];
+% 	' ("SÃ©lection").                                      '];
 %    hlpStr2 = [...
-% 	' Les filtres à Réponse Impulsionnelle    '
-% 	' Finie (RIF) peuvent être obtenus        '
-% 	' classiquement avec différentes fenêtres '
+% 	' Les filtres Ã  RÃ©ponse Impulsionnelle    '
+% 	' Finie (RIF) peuvent Ãªtre obtenus        '
+% 	' classiquement avec diffÃ©rentes fenÃªtres '
 % 	' ou par optimisation avec Remez ou avec  '
-% 	' les moindres carrés (MC).               '
+% 	' les moindres carrÃ©s (MC).               '
 % 	'                                         '
-% 	' Les méthodes de Butterworth, de         '
+% 	' Les mÃ©thodes de Butterworth, de         '
 % 	' Cebychev (1 et 2) et elliptique         '
 % 	' calculent les coefficients de filtres   '
-% 	' à Réponse Impulsionnelle Infinie (RII). '
+% 	' Ã  RÃ©ponse Impulsionnelle Infinie (RII). '
 % 	'                                         '
-% 	' Les filtres RIF nécessitent             '
-% 	' généralement un ordre bien plus élevé   '
+% 	' Les filtres RIF nÃ©cessitent             '
+% 	' gÃ©nÃ©ralement un ordre bien plus Ã©levÃ©   '
 % 	' que les RII. Le calcul automatique      '
 % 	' ("Auto") de cet ordre n`est pas         '
-% 	' possible pour la méthode par MC.        '
+% 	' possible pour la mÃ©thode par MC.        '
 % 	'                                         '
 % 	' Remarquons que pour les filtres RII,    '
 % 	' les oscillations dans la bande passante '
 % 	' fluctuent entre 0 dB et dp dB,    '
 % 	' tandis que pour les RIF elles sont      '
-% 	' centrées autour de 0 dB.                '];
+% 	' centrÃ©es autour de 0 dB.                '];
 % 
 %    hlpStr3 = [...
 % 	' Une fois qu`un filtre est obtenu, la    '
-% 	' réponse d`un signal au filtre réalisé   '
-% 	' peut être visualisée temporellement et  '
-% 	' fréquentiellement.                      '
+% 	' rÃ©ponse d`un signal au filtre rÃ©alisÃ©   '
+% 	' peut Ãªtre visualisÃ©e temporellement et  '
+% 	' frÃ©quentiellement.                      '
 % 	'                                         '
 % 	' On peut sauvegarder les gabarits des    '
 % 	' filtres en format matlab et les courbes '
